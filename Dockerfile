@@ -94,6 +94,12 @@ RUN bash -c '. /.nvm/nvm.sh ; nvm alias default 0.10'
 RUN bash -c '. /.nvm/nvm.sh ; npm update -g npm'
 RUN bash -c '. /.nvm/nvm.sh ; npm install -g phantomjs grunt grunt-cli bower'
 
+# UFIRST BEGIN
+RUN apt-get install -y python-software-properties
+RUN apt-get update
+RUN apt-get install -y libfreetype6 libfontconfig1
+# UFIRST END
+
 # When the image is started add the remote server key, install the runner and run it
 WORKDIR /gitlab-ci-runner
 CMD ssh-keyscan -H $GITLAB_SERVER_FQDN >> /root/.ssh/known_hosts & bundle exec ./bin/setup_and_run
