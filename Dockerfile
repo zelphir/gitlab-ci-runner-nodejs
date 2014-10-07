@@ -44,7 +44,9 @@ RUN apt-get install -y \
   postfix \
   libicu-dev \
   libfreetype6 \
-  libfontconfig1
+  libfontconfig1 \
+  python-software-properties \
+  libfreetype6
 
 # Fix upstart under a virtual host https://github.com/dotcloud/docker/issues/1024
 # RUN dpkg-divert --local --rename --add /sbin/initctl
@@ -82,23 +84,16 @@ RUN gem install compass sass
 # RUN rm -rf /tmp/node
 
 RUN wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
-RUN echo '. /.nvm/nvm.sh' >> /root/.bashrc
 RUN cat /root/.bashrc /.nvm/nvm.sh
 
-RUN bash -c '. /.nvm/nvm.sh ; nvm install 0.10'
-RUN bash -c '. /.nvm/nvm.sh ; nvm install 0.11'
-RUN bash -c '. /.nvm/nvm.sh ; nvm alias default 0.10'
+RUN bash -c 'nvm install 0.10'
+RUN bash -c 'nvm install 0.11'
+RUN bash -c 'nvm alias default 0.10'
 
 
 # update npm and install some basics
-RUN bash -c '. /.nvm/nvm.sh ; npm update -g npm'
-RUN bash -c '. /.nvm/nvm.sh ; npm install -g phantomjs grunt grunt-cli bower'
-
-# UFIRST BEGIN
-RUN apt-get install -y python-software-properties
-RUN apt-get update
-RUN apt-get install -y libfreetype6 libfontconfig1
-# UFIRST END
+RUN bash -c 'npm update -g npm'
+RUN bash -c 'npm install -g phantomjs grunt grunt-cli bower'
 
 # When the image is started add the remote server key, install the runner and run it
 WORKDIR /gitlab-ci-runner
