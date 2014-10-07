@@ -82,17 +82,17 @@ RUN gem install compass sass
 # RUN rm -rf /tmp/node
 
 RUN wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
-RUN echo '. /.nvm/nvm.sh' >> /root/.bashrc
+RUN echo './.nvm/nvm.sh' >> /root/.bashrc
 RUN cat /root/.bashrc /.nvm/nvm.sh
 
-RUN bash -c '. /.nvm/nvm.sh ; nvm install 0.10'
-RUN bash -c '. /.nvm/nvm.sh ; nvm install 0.11'
-RUN bash -c '. /.nvm/nvm.sh ; nvm alias default 0.10'
+RUN bash -c './.nvm/nvm.sh ; nvm install 0.10'
+RUN bash -c './.nvm/nvm.sh ; nvm install 0.11'
+RUN bash -c './.nvm/nvm.sh ; nvm alias default 0.10'
 
 
 # update npm and install some basics
-RUN bash -c '. /.nvm/nvm.sh ; npm update -g npm'
-RUN bash -c '. /.nvm/nvm.sh ; npm install -g phantomjs grunt grunt-cli bower'
+RUN bash -c './.nvm/nvm.sh ; npm update -g npm'
+RUN bash -c './.nvm/nvm.sh ; npm install -g phantomjs grunt grunt-cli bower'
 
 # UFIRST BEGIN
 RUN apt-get install -y python-software-properties
