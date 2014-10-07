@@ -85,14 +85,14 @@ RUN gem install compass sass
 
 RUN wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 
-RUN ["/bin/bash","-c 'nvm install 0.10'"]
-RUN ["/bin/bash","-c 'nvm install 0.11'"]
-RUN ["/bin/bash","-c 'nvm alias default 0.10'"]
+RUN ["/bin/bash","nvm install 0.10"]
+RUN ["/bin/bash","nvm install 0.11"]
+RUN ["/bin/bash","nvm alias default 0.10"]
 
 
 # update npm and install some basics
-RUN ["/bin/bash","-c 'npm update -g npm'"]
-RUN ["/bin/bash","-c 'npm install -g phantomjs grunt grunt-cli bower'"]
+RUN ["/bin/bash","npm update -g npm"]
+RUN ["/bin/bash","npm install -g phantomjs grunt grunt-cli bower"]
 
 # When the image is started add the remote server key, install the runner and run it
 WORKDIR /gitlab-ci-runner
