@@ -99,5 +99,5 @@ RUN ["/bin/bash","-i","-l","-c","npm install -g grunt grunt-cli bower"]
 
 # When the image is started add the remote server key, install the runner and run it
 WORKDIR /gitlab-ci-runner
-CMD CMD ["/bin/bash","-i","-l","-c","ssh-keyscan -H $GITLAB_SERVER_FQDN >> /root/.ssh/known_hosts & bundle exec ./bin/setup_and_run"]
+CMD ["/bin/bash","-i","-l","-c","ssh-keyscan -H $GITLAB_SERVER_FQDN >> /root/.ssh/known_hosts & bundle exec ./bin/setup_and_run"]
 
