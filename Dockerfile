@@ -83,7 +83,7 @@ RUN gem install compass sass
 
 RUN wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 RUN echo './.nvm/nvm.sh' >> /root/.bashrc
-RUN cat /root/.bashrc /.nvm/nvm.sh
+RUN cat /root/.bashrc ./.nvm/nvm.sh
 
 RUN bash -c './.nvm/nvm.sh ; nvm install 0.10'
 RUN bash -c './.nvm/nvm.sh ; nvm install 0.11'
