@@ -11,9 +11,9 @@ Differences from the original:
 
 # Installation
 
-This image is available as a [Trusted Build](https://index.docker.io/u/codingforce/gitlab-ci-runner-nodejs/). Import the build like this:
+This image is available as a [Trusted Build](https://index.docker.io/u/ufirstgroup/gitlab-ci-runner-nodejs/). Import the build like this:
 
-    docker pull codingforce/gitlab-ci-runner-nodejs
+    docker pull ufirstgroup/gitlab-ci-runner-nodejs
 
 # Usage
 Run like this:
@@ -23,5 +23,5 @@ Run like this:
         -e REGISTRATION_TOKEN=replaceme \
         -e HOME=/root \
         -e GITLAB_SERVER_FQDN=gitlab.example.com \
-        codingforce/gitlab-ci-runner-nodejs
+        ufirstgroup/gitlab-ci-runner-nodejs
 
