@@ -86,8 +86,6 @@ RUN mkdir /tmp/node && cd /tmp/node && curl -s http://nodejs.org/dist/node-lates
 RUN cd /tmp/node  && ./configure && make && make install
 RUN rm -rf /tmp/node
 
-RUN wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
-
 # update npm and install some basics
 RUN ["/bin/bash","-i","-l","-c","npm update -g npm"]
 RUN ["/bin/bash","-i","-l","-c","npm install -g grunt grunt-cli bower jshint jsxhint gulp"]
