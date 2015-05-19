@@ -1,7 +1,7 @@
 # gitlab-ci-runner-nodejs ¯\_(ツ)_/¯
 
 FROM ubuntu:12.04.5
-MAINTAINER  Alex Gervais "alex.gervais@mac.com"
+MAINTAINER  zelphir "zelphir@gmail.com"
 
 # Based on https://github.com/gitlabhq/gitlab-ci-runner/blob/master/Dockerfile
 # by Sytse Sijbrandij <sytse@gitlab.com>
@@ -73,7 +73,7 @@ RUN mkdir -p /root/.ssh
 RUN touch /root/.ssh/known_hosts
 
 # Install the runner
-RUN mkdir /gitlab-ci-runner && cd /gitlab-ci-runner && curl -sL https://github.com/gitlabhq/gitlab-ci-runner/archive/v5.0.0.tar.gz | tar xz --strip-components=1
+RUN mkdir /gitlab-ci-runner && cd /gitlab-ci-runner && curl -sL https://github.com/gitlabhq/gitlab-ci-runner/archive/v5.2.1.tar.gz | tar xz --strip-components=1
 
 # Install the gems for the runner
 RUN cd /gitlab-ci-runner && gem install bundler && bundle install
@@ -88,7 +88,7 @@ RUN rm -rf /tmp/node
 
 # update npm and install some basics
 RUN ["/bin/bash","-i","-l","-c","npm update -g npm"]
-RUN ["/bin/bash","-i","-l","-c","npm install -g grunt grunt-cli bower jshint jsxhint gulp"]
+RUN ["/bin/bash","-i","-l","-c","npm install -g gulp jshint"]
 
 # When the image is started add the remote server key, install the runner and run it
 WORKDIR /gitlab-ci-runner
