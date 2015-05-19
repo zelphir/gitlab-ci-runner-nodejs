@@ -13,7 +13,7 @@ Differences from the original:
 
 This image is available as a [Trusted Build](https://index.docker.io/u/ufirstgroup/gitlab-ci-runner-nodejs/). Import the build like this:
 
-    docker pull ufirstgroup/gitlab-ci-runner-nodejs
+    docker pull zelphir/gitlab-ci-runner-nodejs
 
 # Usage
 Run like this:
@@ -23,5 +23,5 @@ Run like this:
         -e REGISTRATION_TOKEN=replaceme \
         -e HOME=/root \
         -e GITLAB_SERVER_FQDN=gitlab.example.com \
-        ufirstgroup/gitlab-ci-runner-nodejs
+        zelphir/gitlab-ci-runner-nodejs
 
