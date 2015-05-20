@@ -88,7 +88,7 @@ RUN rm -rf /tmp/node
 
 # update npm and install some basics
 RUN ["/bin/bash","-i","-l","-c","npm update -g npm"]
-RUN ["/bin/bash","-i","-l","-c","npm install -g gulp jshint"]
+RUN ["/bin/bash","-i","-l","-c","npm install -g gulp jshint bower"]
 
 # When the image is started add the remote server key, install the runner and run it
 WORKDIR /gitlab-ci-runner
