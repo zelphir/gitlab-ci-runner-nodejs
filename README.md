@@ -7,7 +7,7 @@ Differences from the original:
 - no mysql
 - no postgres
 - no redis
-- current stable node.js with npm, phantom.js, jshint and gulp
+- current stable node.js with npm, phantom.js, jshint, gulp and bower
 
 # Installation
 
